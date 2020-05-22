@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dominio-contoso-com
+  labels:
+    app: client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client
+      tier: frontend
+  template:
+    metadata:
+      labels: 
+        app: client
+        tier: frontend
+    spec:
+      containers:
+      - name: dominio-contoso-com
+        image: wordpress
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 100m
+            memory: 128Mi
+        ports:
+        - containerPort: 80
+        env:
+        - name: WORDPRESS_DB_HOST
+          value: mysql-svc
+        - name: WORDPRESS_DB_PASSWORD
+          value: '123qwe!'
+        volumeMounts:
+        - mountPath: "/var/www/html"
+          name: dominio-contoso-com-volume
+      volumes:
+      - name: dominio-contoso-com-volume
+        persistentVolumeClaim:
+          claimName: pvc-dominio-contoso-com

@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-deploy
+  labels:
+    app: client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client
+      tier: mysql
+  template:
+    metadata:
+      labels: 
+        app: client
+        tier: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 100m
+            memory: 128Mi
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "123qwe!"
+        volumeMounts:
+        - mountPath: "/var/lib/mysql"
+          name: mysql-volume
+      volumes:
+      - name: mysql-volume
+        persistentVolumeClaim:
+          claimName: azure-managed-disk-mysql

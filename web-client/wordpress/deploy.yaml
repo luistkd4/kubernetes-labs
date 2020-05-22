@@ -30,9 +30,25 @@ spec:
         - containerPort: 80
         env:
         - name: WORDPRESS_DB_HOST
-          value: mysql-svc
+          valueFrom:
+            secretKeyRef:
+              name: dominio-contoso-keys
+              key: db-host
+        - name: WORDPRESS_DB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: dominio-contoso-keys
+              key: db-name
+        - name: WORDPRESS_DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: dominio-contoso-keys
+              key: db-username
         - name: WORDPRESS_DB_PASSWORD
-          value: '123qwe!'
+          valueFrom:
+            secretKeyRef:
+              name: dominio-contoso-keys
+              key: db-password
         volumeMounts:
         - mountPath: "/var/www/html"
           name: dominio-contoso-com-volume

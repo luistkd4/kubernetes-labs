@@ -30,7 +30,10 @@ spec:
         - containerPort: 3306
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: "123qwe!"
+          valueFrom:
+            secretKeyRef:
+              name: mysql01-password
+              key: password
         volumeMounts:
         - mountPath: "/var/lib/mysql"
           name: mysql-volume

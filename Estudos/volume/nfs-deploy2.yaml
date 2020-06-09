@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: nfs-deploy2
+  name: nfs-deploy2
+  namespace: lupalinda
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: nfs-deploy2
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        run: nfs-deploy2
+    spec:
+      containers:
+      - image: nginx
+        imagePullPolicy: Always
+        name: nfs-deploy
+        volumeMounts:
+        - name: nfs-pv
+          mountPath: /lupalinda
+        - name: nfs-pv2
+          mountPath: /nasuacara
+        ports:
+        - containerPort: 80
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 400m
+            memory: 512Mi
+          requests:
+            cpu: 250m
+            memory: 256Mi
+      volumes:
+      - name: nfs-pv
+        persistentVolumeClaim:
+          claimName: primeiro-pvc
+      - name: nfs-pv2
+        persistentVolumeClaim:
+          claimName: segundo-pvc
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30

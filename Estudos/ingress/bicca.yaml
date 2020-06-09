@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  generation: 2
+  name: bicca-gay
+  namespace: default
+spec:
+  rules:
+  - host: api.veronez.net
+    http:
+      paths:
+      - backend:
+          serviceName: primeiro-service
+          servicePort: 80
+  - host: sulinfra.com.br
+    http:
+      paths:
+      - backend:
+          serviceName: nginx-service
+          servicePort: 80

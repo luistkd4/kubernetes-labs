@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-readiness-probe
+  namespace: lupalinda
+  labels:
+    run: random
+spec:
+  containers:
+  - image: k8spatterns/random-generator:1.0
+    name: random-generation
+    readinessProbe:
+      exec:
+        command: [ "stat", "/usr/lib/os-release" ]

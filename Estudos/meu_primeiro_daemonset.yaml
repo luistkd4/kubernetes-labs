@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: daemon-set-primeiro
+  namespace: lupalinda
+spec:
+  selector:
+    matchLabels:
+      system: strigus
+  template:
+    metadata:
+      labels:
+        system: strigus
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.7.9
+        resources:
+          limits:
+            memory: 200Mi
+          requests:
+            cpu: 100m
+            memory: 200Mi
+  updateStrategy:
+    type: RollingUpdate

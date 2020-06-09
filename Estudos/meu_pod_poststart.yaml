@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-post-start-hook
+  namespace: lupalinda
+  labels:
+    run: poststart
+spec:
+  containers:
+  - image: k8spatterns/random-generator:1.0
+    name: random-generation
+    lifecycle:
+      postStart:
+        exec:
+          command:
+          - sh
+          - -c
+          - sleep 30 && echo "Wake up!" > /tmp/postStart_done

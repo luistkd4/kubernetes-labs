@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: app2
+  name: app2
+  namespace: default
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      run: app2
+  template:
+    metadata:
+      labels:
+        run: app2
+    spec:
+      containers:
+      - image: dockersamples/static-site
+        env:
+        - name: AUTHOR
+          value: HORSE
+        imagePullPolicy: Always
+        name: app2
+        ports:
+        - containerPort: 80
+          protocol: TCP

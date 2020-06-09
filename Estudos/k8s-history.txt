@@ -1,0 +1,1000 @@
+  907  vim meu_primeiro_daemonset.yaml 
+  908  kubectl delete daemonsets.apps -n lupalinda daemon-set-primeiro 
+  909  kubectl create -f meu_primeiro_daemonset.yaml
+  910  vim meu_primeiro_daemonset.yaml 
+  911  kubectl create -f meu_primeiro_daemonset.yaml
+  912  vim meu_primeiro_daemonset.yaml 
+  913  kubectl create -f meu_primeiro_daemonset.yaml
+  914  kubectl get daemonsets.apps -n lupalinda 
+  915  kubectl edit daemonsets.apps -n lupalinda daemon-set-primeiro 
+  916  kubectl rollout history daemonset -n lupalinda 
+  917  kubectl rollout history daemonset -n lupalinda --revision 1
+  918  kubectl rollout history daemonset -n lupalinda --revision 2
+  919  kubectl get pod -n lupalinda 
+  920  kubectl describe -n lupalinda daemon-set-primeiro-g6qrz
+  921  kubectl describe daemonsets.apps -n lupalinda daemon-set-primeiro-g6qrz
+  922  kubectl describe pod -n lupalinda daemon-set-primeiro-g6qrz
+  923  kubectl rollout history daemonset -n lupalinda daemon-set-primeiro 
+  924  kubectl rollout undo daemonset -n lupalinda daemon-set-primeiro --to-revision 1
+  925  kubectl describe pod -n lupalinda daemon-set-primeiro-g6qrz
+  926  kubectl get pod -n lupalinda 
+  927  kubectl describe pod -n lupalinda daemon-set-primeiro-6zz6t
+  928  sudo su
+  929  kubectl get pod -n lupalinda 
+  930  kubectl get deployments.apps 
+  931  cd canary/
+  932  ls
+  933  kubectl create -f service-app.yml 
+  934  kubectl get service
+  935  kubectl get service -o wide
+  936  kubectl get pods
+  937  curl 10.99.146.4:32222
+  938  curl 10.100.108.43:32381
+  939  history | greo curl
+  940  history | grep curl
+  941  kubectl describe service nginx-service
+  942  kubectl describe pod meu-nginx-f675bbf6-8z48q
+  943  kubectl get deployments.apps 
+  944  kubectl expose deployment giropops-v1 --type=NodePort
+  945  kubectl get service
+  946  kubectl describe deployments.apps giropops-v1 
+  947  kubectl get service
+  948  curl 10.96.185.200:30500
+  949  curl http://10.96.185.200:30500/
+  950  kubectl get pods
+  951  kubectl logs giropops-v1-8597f74669-lr89t
+  952  kubectl logs pod giropops-v1-8597f74669-lr89t
+  953  kubectl logs pods giropops-v1-8597f74669-lr89t
+  954  kubectl describe pod  giropops-v1-8597f74669-lr89t
+  955  ping 10.40.0.6
+  956  curl http://10.40.0.6:32111/
+  957  curl http://10.40.0.6:80/
+  958  kubectl get service
+  959  curl http://10.99.146.4:80/
+  960  curl http://10.99.146.4:32222/
+  961  curl http://k8s02:32222/
+  962  ping k8s02
+  963  kubectl get nods
+  964  kubectl get nodes
+  965  kubectl describe k8s02
+  966  kubectl describe node k8s02
+  967  curl http://187.84.234.102:32222/
+  968  kubectl get nods
+  969  kubectl get service
+  970  curl http://187.84.234.101:32222/
+  971  kubectl get pod -o wide
+  972  kubectl get service -o wide
+  973  curl http://187.84.234.101:32222/
+  974  kubectl scale deployment giropops-v1 --replicas=10
+  975  kubectl get deployments.apps 
+  976  kubectl get deployments.apps -o wide
+  977  cat app-v1.yml 
+  978  vim app-v2-canary.yml 
+  979  kubectl create -f app-v2-canary.yml 
+  980  kubectl get deployments.apps -o wide
+  981  kubectl get service -o wide
+  982  curl http://187.84.234.101:32222/
+  983  kubectl scale deployment giropops-v1 --replicas=5
+  984  vim app-v2.yml 
+  985  kubectl apply app-v2.yml 
+  986  kubectl apply -f app-v2.yml 
+  987  vim app-v2.yml 
+  988  kubectl apply -f app-v2.yml 
+  989  kubectl get pods -o wide
+  990  curl http://187.84.234.101:32222/
+  991  kubectl delete deployments.apps giropops-v1
+  992  kubectl describe deployments.apps giropops-v2 
+  993  git clone https://github.com/badtuxx/k8s-canary-deploy-example.git
+  994  mkdir -p canary
+  995  cp k8s-canary-deploy-example/deploy-app-v1-playbook/roles/common/files/* canary/
+  996  cp k8s-canary-deploy-example/deploy-app-v2-playbook/roles/common/files/* canary/
+  997  cp k8s-canary-deploy-example/canary-deploy-app-v2-playbook/deploy-app-v2-playbook/roles/common/files/* canary/
+  998  cp k8s-canary-deploy-example/canary-deploy-app-v2-playbook/roles/common/files/* canary/
+  999  cd canary/
+ 1000  ls -ll
+ 1001  vim app-v1.yml 
+ 1002  vim app-v2.yml 
+ 1003  vim app-v2-canary.yml 
+ 1004  vim app-v2.yml 
+ 1005  vim service-app.yml 
+ 1006  cat app-v1.yml 
+ 1007  cat service-app.yml 
+ 1008  cat ../.bashrc 
+ 1009  source <(kubectl completion bash)
+ 1010  kubectl create -f app-v1.yml
+ 1011  cat ../meu_primeiro_deployment.yml 
+ 1012  vim app-v1.yml 
+ 1013  kubectl create -f app-v1.yml
+ 1014  cat ../meu_primeiro_deployment.yml 
+ 1015  cat app-v1.yml 
+ 1016  cat service-app.yml 
+ 1017  vim service-app.yml 
+ 1018  vim app-v1.yml 
+ 1019  kubectl create -f app-v1.yml
+ 1020  vim app-v1.yml 
+ 1021  kubectl create -f app-v1.yml
+ 1022  kubectl get depl
+ 1023  kubectl get deploy
+ 1024  vim app-v1.yml 
+ 1025  api-versions  apply
+ 1026  kubectl completation
+ 1027  kubectl completation -h
+ 1028  kubectl completion -h
+ 1029  source '$HOME/.kube/completion.bash.inc'
+ 1030  kubectl make shell
+ 1031  make shell
+ 1032  apt-cache search completion
+ 1033  apt-cache search bash-completion
+ 1034  apt-get install bash-completion
+ 1035  su -
+ 1036  vim simpleIngress.yaml
+ 1037  kubectl create -f simpleIngress.yaml 
+ 1038  kubectl create pod
+ 1039  kubectl create pod -h
+ 1040  vim pod.json
+ 1041  vim pod.yaml
+ 1042  mv pod.yaml pod-emptydir.yaml 
+ 1043  kubectl get pods 
+ 1044  kubectl get deployments.apps 
+ 1045  kubectl delete deployments.apps giropops-v2 
+ 1046  ls
+ 1047  kubectl create pod -f pod-emptydir.yaml 
+ 1048  kubectl create -f pod-emptydir.yaml 
+ 1049  vim pod-emptydir.yaml 
+ 1050  kubectl create -f pod-emptydir.yaml 
+ 1051  kubectl get pods -n lupalinda
+ 1052  kubectl describe pods -n lupalinda busybox 
+ 1053  kubectl exec -it -n lupalinda busybox -- sh
+ 1054  kubectl describe pods -n lupalinda busybox -o wide
+ 1055  kubectl get pods -n lupalinda busybox -o wide
+ 1056  kubectl delete pod -n lupalinda busybox
+ 1057  apt-get install nfs-kernel-server 
+ 1058  mkdir /opt/data
+ 1059  mkdir /opt/dados
+ 1060  chmod 1777 /opt/dados/
+ 1061  vim /etc/exports 
+ 1062  chmod 1777 /opt/dados/
+ 1063  vim /etc/exports 
+ 1064  exportfs -ar
+ 1065  vim /etc/exports 
+ 1066  exportfs -ar
+ 1067  ifconfig eth0
+ 1068  vim /etc/exports 
+ 1069  ls
+ 1070  pwd
+ 1071  ls
+ 1072  vim meu_primeiro_pv.yaml
+ 1073  kubectl create -f meu_primeiro_pv.yaml 
+ 1074  kubectl get -n lupalinda pv
+ 1075  kubectl describe -n lupalinda pv mongo-pv 
+ 1076  ls
+ 1077  vim /deployments/mongo-pv.yaml 
+ 1078  kubectl describe -n lupalinda pv primeiro-pv 
+ 1079  kubectl get -n lupalinda pv -o wide
+ 1080  vim meu_primeiro_pvc.yaml 
+ 1081  vim meu_primeiro_pv.yaml 
+ 1082  vim meu_primeiro_pvc.yaml 
+ 1083  kubectl create -f meu_primeiro_pvc.yaml 
+ 1084  kubectl get pvc
+ 1085  kubectl get pvc -namespace lupalinda
+ 1086  kubectl get pvc --namespace lupalinda
+ 1087  kubectl get pvc --namespace lupalinda -o wide
+ 1088  kubectl get -n lupalinda pv -o wide
+ 1089  kubectl get pods --namespace lupalinda 
+ 1090  kubectl get pods
+ 1091  kubectl get deployments.apps 
+ 1092  kubectl get deployments.apps meu-nginx -o yaml > nfs-deploy.yaml
+ 1093  vim nfs-deploy.yaml 
+ 1094  ls -ll
+ 1095  vim pod-emptydir.yaml
+ 1096  vim nfs-deploy.yaml 
+ 1097  vim pod-emptydir.yaml
+ 1098  vim nfs-deploy.yaml 
+ 1099  kubectl create -f nfs-deploy.yaml 
+ 1100  vim nfs-deploy.yaml 
+ 1101  kubectl create -f nfs-deploy.yaml 
+ 1102  kubectl get deployments.apps --namespace lupalinda
+ 1103  vim nfs-deploy.yaml 
+ 1104  kubectl get deployments.apps
+ 1105  kubectl describe deployments.apps nfs-deploy
+ 1106  kubectl describe deployments.apps nfs-deploy -o wide
+ 1107  kubectl get deployments.apps nfs-deploy -o wide
+ 1108  kubectl delete deployments.apps nfs-deploy 
+ 1109  vim nfs-deploy.yaml 
+ 1110  kubectl create -f nfs-deploy.yaml 
+ 1111  q!
+ 1112  vim nfs-deploy.yaml 
+ 1113  kubectl create -f nfs-deploy.yaml 
+ 1114  vim nfs-deploy.yaml 
+ 1115  kubectl create -f nfs-deploy.yaml 
+ 1116  kubectl get deployments.apps nfs-deploy -o wide
+ 1117  kubectl describe deployments.apps nfs-deploy -o wide
+ 1118  kubectl describe deployments.apps nfs-deploy
+ 1119  kubectl get deployments.apps nfs-deploy -o wide
+ 1120  ls -ll
+ 1121  vim meu_primeiro_pv.yaml 
+ 1122  vim meu_primeiro_pvc.yaml 
+ 1123  kubectl get deployments.apps nfs-deploy -o wide
+ 1124  vim meu_primeiro_pvc.yaml 
+ 1125  vim nfs-deploy.yaml 
+ 1126  kubectl get deployments.apps nfs-deploy -o wide
+ 1127  vim nfs-deploy.yaml 
+ 1128  kubectl delete deployments.apps nfs-deploy 
+ 1129  kubectl create -f nfs-deploy.yaml 
+ 1130  kubectl get deployments.apps nfs-deploy -o wide
+ 1131  kubectl label nodes k8s02 --list
+ 1132  kubectl label nodes k8s03 --list
+ 1133  kubectl describe deployments.apps nfs-deploy
+ 1134  kubectl get pods
+ 1135  kubectl describe pod nfs-deploy-7b5cdb7f59-vrfb6
+ 1136  kubectl delete deployments.apps nfs-deploy 
+ 1137  vim nfs-deploy.yaml 
+ 1138  kubectl create -f nfs-deploy.yaml 
+ 1139  kubectl describe deployments.apps nfs-deploy
+ 1140  kubectl describe deployments.apps --namespace lupalinda nfs-deploy
+ 1141  kubectl get deployments.apps --namespace lupalinda 
+ 1142  kubectl get deployments.apps --namespace lupalinda -o wide
+ 1143  ls -ll
+ 1144  vim meu_pod_nodeselector.yaml
+ 1145  ls -ll
+ 1146  kubectl get pods --namespace lupalinda 
+ 1147  kubectl exec -it nfs-deploy-7b5cdb7f59-ljgjt bash
+ 1148  kubectl exec -it --namespace lupalinda nfs-deploy-7b5cdb7f59-ljgjt bash
+ 1149  kubectl get pods --namespace lupalinda 
+ 1150  kubectl exec -it --namespace lupalinda nfs-deploy-7b5cdb7f59-sfcmj
+ 1151  kubectl exec -it --namespace lupalinda nfs-deploy-7b5cdb7f59-sfcmj bash
+ 1152  ls /opt/dados/
+ 1153  stat /opt/dados/ARQ1
+ 1154  stat /opt/dados/ARQ2
+ 1155  ls -ll
+ 1156  kubectl get deployments.apps --namespace lupalinda
+ 1157  cat /deployments/mongo-pod.yaml 
+ 1158  cat /deployments/mongo-pvc.json 
+ 1159  ls
+ 1160  cat nfs-deploy.yaml 
+ 1161  q!
+ 1162  vim meu_primeiro_cronjob.yaml
+ 1163  kubectl create -f meu_primeiro_cronjob.yaml 
+ 1164  vim meu_primeiro_cronjob.yaml
+ 1165  kubectl create -f meu_primeiro_cronjob.yaml 
+ 1166  kubectl get cronjobs.batch 
+ 1167  kubectl get jobs.batch 
+ 1168  kubectl get jobs.batch --watch
+ 1169  kubectl get jobs.batch
+ 1170  kubectl get cronjobs.batch 
+ 1171  vim meu_primeiro_cronjob.yaml
+ 1172  kubectl describe cronjobs.batch 
+ 1173  kubectl get pods
+ 1174  kubectl describe pi-bnnnb
+ 1175  kubectl describe pod pi-bnnnb
+ 1176  q1
+ 1177  kubectl get pods
+ 1178  vim meu_primeiro_cronjob.yaml
+ 1179  kubectl exec -it hello-1578963360-nlqct - sh
+ 1180  kubectl exec -it hello-1578963360-nlqct - bash
+ 1181  kubectl logs hello-1578963360-nlqct
+ 1182  kubectl get pods
+ 1183  kubectl delete cronjobs.batch hello 
+ 1184  ls
+ 1185  kubect create secret generic my-literal-secret --from-litera user=lupalinda --from-literal password=boboesponja
+ 1186  kubectl create secret generic my-literal-secret --from-litera user=lupalinda --from-literal password=boboesponja
+ 1187  kubectl create secret generic my-literal-secret --from-literal user=lupalinda --from-literal password=boboesponja
+ 1188  kubectl get secrets 
+ 1189  kubectl describe secrets my-literal-secret 
+ 1190  kubectl describe secrets my-literal-secret -o yaml
+ 1191  kubectl describe secrets my-literal-secret 
+ 1192  kubectl describe secrets my-literal-secret -o yaml
+ 1193  kubectl describe secrets my-literal-secret -o yml
+ 1194  kubectl get secrets my-literal-secret -o yaml
+ 1195  echo 'Ym9ib2VzcG9uamE=' | base64 --decode 
+ 1196  set
+ 1197  env
+ 1198  vim meu_primeiro_pod_secret_env.yml 
+ 1199  kubectl get secrets
+ 1200  kubectl create -f meu_primeiro_pod_secret_env.yml 
+ 1201  vim meu_primeiro_pod_secret_env.yml 
+ 1202  kubectl create -f meu_primeiro_pod_secret_env.yml 
+ 1203  kubectl get pods
+ 1204  kubectl -it test-secret-env -- sh
+ 1205  kubectl exec -it test-secret-env -- sh
+ 1206  kubectl exec test-secret-env -c busy-secret-env -it -- printenv
+ 1207  kubectl -it test-secret-env -- sh
+ 1208  kubectl exec -it test-secret-env -- sh
+ 1209  vim meu_primeiro_pod_secret_env.yml 
+ 1210  kubectl get pods -o wide
+ 1211  kubectl get pods -n
+ 1212  kubectl get pods -A
+ 1213  kubectl get pods -A -o wide
+ 1214  kubectl get pods -A -o wide | grep k8s03
+ 1215  ls
+ 1216  ls | grep ingr
+ 1217  ls | grep in
+ 1218  kubectl get nodes
+ 1219  mkdir -p cores-frutas
+ 1220  echo -n amarela cores-frutas/banana
+ 1221  echo -n verde cores-frutas/limao
+ 1222  echo -n vermelho cores-frutas/morando
+ 1223  kubectl create configmap --from-literal uva=roxo --from-file cores-frutas/
+ 1224  kubectl create configmap cores-frutas --from-literal uva=roxo --from-file cores-frutas/
+ 1225  kubectl get configmaps 
+ 1226  kubectl describe configmaps 
+ 1227  ls cores-frutas/
+ 1228  ls -ll cores-frutas/
+ 1229  echo -n amarela > cores-frutas/banana
+ 1230  echo -n vermelho > cores-frutas/morando
+ 1231  echo -n verde > cores-frutas/limao
+ 1232  kubectl delete configmaps 
+ 1233  kubectl delete configmaps  cores-frutas 
+ 1234  kubectl create configmap cores-frutas --from-literal uva=roxo --from-file cores-frutas/
+ 1235  kubectl describe configmaps 
+ 1236  vim meu_primeiro_pod_configmap.yaml
+ 1237  kubectl create -f meu_primeiro_pod_configmap.yaml 
+ 1238  vim meu_primeiro_pod_configmap.yaml
+ 1239  vim meu_primeiro_pod_secret_env.yml 
+ 1240  vim meu_primeiro_pod_configmap.yaml
+ 1241  kubectl create -f meu_primeiro_pod_configmap.yaml 
+ 1242  vim meu_primeiro_pod_secret_env.yml 
+ 1243  kubectl create -f meu_primeiro_pod_configmap.yaml 
+ 1244  vim meu_primeiro_pod_configmap.yaml
+ 1245  vim meu_primeiro_pod_secret_env.yml 
+ 1246  kubectl create -f meu_primeiro_pod_configmap.yaml 
+ 1247  vim meu_primeiro_pod_secret_env.yml 
+ 1248  vim meu_primeiro_pod_configmap.yaml
+ 1249  kubectl get configmaps 
+ 1250  vim meu_primeiro_pod_secret_env.yml 
+ 1251  vim meu_primeiro_pod_configmap.yaml
+ 1252  kubectl describe configmaps 
+ 1253  vim meu_primeiro_pod_configmap.yaml
+ 1254  kubectl create -f meu_primeiro_pod_configmap.yaml 
+ 1255  vim meu_primeiro_pod_configmap.yaml
+ 1256  kubectl create -f meu_primeiro_pod_configmap.yaml 
+ 1257  kubectl get pods
+ 1258  kubectl describe busybox-configmap
+ 1259  kubectl describe pod busybox-configmap
+ 1260  kubectl exec -it busybox-configmap -- bash
+ 1261  kubectl exec -it busybox-configmap -- sh
+ 1262  kubectl edit configmaps cores-frutas 
+ 1263  vim cores-frutas/banana 
+ 1264  kubectl exec -it busybox-configmap -- sh
+ 1265  kubectl delete -f meu_primeiro_pod_configmap.yaml 
+ 1266  cp meu_primeiro_pod_configmap.yaml meu_segundo_pod_configmap.yaml
+ 1267  vim meu_segundo_pod_configmap.yaml 
+ 1268  kubectl create -f 
+ 1269  kubectl create -f meu_segundo_pod_configmap.yaml 
+ 1270  kubectl exec -it busybox-configmap -- sh
+ 1271  vim meu_segundo_pod_configmap.yaml 
+ 1272  *** System restart required ***
+ 1273  cp meu_primeiro_pod_configmap.yaml meu_segundo_pod_configmap.yaml
+ 1274  vim meu_segundo_pod_configmap.yaml 
+ 1275  cp meu_segundo_pod_configmap.yaml meu_terceiro_pod_configmap.yaml
+ 1276  vim meu_terceiro_pod_configmap.yaml 
+ 1277  kubectl create -f meu_terceiro_pod_configmap.yaml
+ 1278  kubectl delete -f meu_segundo_pod_configmap.yaml 
+ 1279  kubectl create -f meu_terceiro_pod_configmap.yaml 
+ 1280  kubectl exec -it busybox-configmap -- sh
+ 1281  kubectl get pods
+ 1282  kubectl exec -it busybox-configmap -- sh
+ 1283  vim meu_primeiro_pod_initContainer.yaml
+ 1284  kubectl create -f meu_primeiro_pod_initContainer.yaml
+ 1285  vim meu_primeiro_pod_initContainer.yaml
+ 1286  kubectl get pods
+ 1287  kubectl describe pod init-demo 
+ 1288  vim meu_primeiro_pod_initContainer.yaml
+ 1289  kubectl delete meu_primeiro_pod_initContainer.yaml 
+ 1290  kubectl delete -f meu_primeiro_pod_initContainer.yaml 
+ 1291  kubectl create -f meu_primeiro_pod_initContainer.yaml
+ 1292  kubectl describe pod init-demo 
+ 1293  kubectl get pods
+ 1294  kubectl delete -f meu_primeiro_pod_initContainer.yaml 
+ 1295  kubectl create -f meu_primeiro_pod_initContainer.yaml
+ 1296  kubectl get pods
+ 1297  kubectl describe pod init-demo 
+ 1298  kubectl get pods
+ 1299  vim meu_primeiro_pod_initContainer.yaml
+ 1300  kubectl delete -f meu_primeiro_pod_initContainer.yaml 
+ 1301  kubectl create -f meu_primeiro_pod_initContainer.yaml
+ 1302  kubectl get pods
+ 1303  vim meu_primeiro_pod_initContainer.yaml
+ 1304  kubectl exec -it init-demo -- bash
+ 1305  cat meu_primeiro_pod_initContainer.yaml
+ 1306  kubectl exec -it init-demo -- bash
+ 1307  kubectl get pods
+ 1308  kubectl expose init-demo --type NodePort --port 8080
+ 1309  kubectl expose pod init-demo init-demo --type NodePort --port 8080
+ 1310  kubectl expose init-demo init-demo --type NodePort --port 8080
+ 1311  kubectl expose pod init-demo --type NodePort --port 8080
+ 1312  kubectl expose pod init-demo --type=NodePort
+ 1313  vim meu_primeiro_pod_initContainer.yaml
+ 1314  uptime
+ 1315  kubectl get ndoes
+ 1316  kubectl get nodes
+ 1317  kubectl create serviceaccount miguel
+ 1318  kubectl get serviceaccounts miguel
+ 1319  kubectl get serviceaccounts
+ 1320  kubectl describe serviceaccounts miguel
+ 1321  kubectl get clusterrole
+ 1322  kubectl get clusterrolebindings.rbac.authorization.k8s.io 
+ 1323  kubectl create clusterrolebinding toskeria --serviceaccount=default:miguel
+ 1324  kubectl create clusterrolebinding toskeria --serviceaccount=default:miguel --cluster=cluster-admin
+ 1325  kubectl create clusterrolebinding toskeria --serviceaccount=default:miguel --clusterrole=cluster-admin
+ 1326  kubectl get clusterrolebindings.rbac.authorization.k8s.io 
+ 1327  kubectl describe clusterrolebindings.rbac.authorization.k8s.io cluster-admin
+ 1328  kubectl get clusterrolebindings.rbac.authorization.k8s.io 
+ 1329  ls
+ 1330  vim meu_primeiro_serviceAccount.yaml
+ 1331  kubectl create -f meu_primeiro_serviceAccount.yaml 
+ 1332  kubectl get serviceaccounts -n kube-system
+ 1333  vim meu_primeiro_clusterRoleBinding.yaml
+ 1334  kubectl create -f  meu_primeiro_clusterRoleBinding.yaml
+ 1335  kubectl get clusterrolebindings.rbac.authorization.k8s.io 
+ 1336  kubectl describe clusterrolebindings.rbac.authorization.k8s.io admin-user
+ 1337  ifconfig
+ 1338  ifconfig et0
+ 1339  ifconfig eth0
+ 1340  ls -ll
+ 1341  ls -ll | grep pv
+ 1342  vim meu_terceiro_deployment.yaml 
+ 1343  vim meu_segundo_deployment.yaml 
+ 1344  grep -R Volume
+ 1345  grep -R ./ Volume
+ 1346  grep -R Volume
+ 1347  ls -ll
+ 1348  ls -ll -h
+ 1349  ls -h
+ 1350  ls -ll
+ 1351  ls -ll | grep pod
+ 1352  vim meu_primeiro_pod_initContainer.yaml
+ 1353  vim meu_segundo_pod_configmap.yaml
+ 1354  vim meu_terceiro_pod_configmap.yaml
+ 1355  ls
+ 1356  grep -R volumes
+ 1357  ls
+ 1358  ls -ll
+ 1359  mkdir -p volume
+ 1360  mv nfs-deploy.yaml meu_primeiro_pv.yaml  meu_primeiro_pvc.yaml ./volume/
+ 1361  ls volume/
+ 1362  ls -ll
+ 1363  vim ./volume/nfs-deploy.yaml 
+ 1364  mkdir -p ingress
+ 1365  cd ingress/
+ 1366  vim app1.yaml
+ 1367  vim ../meu_primeiro_deployment.yml 
+ 1368  vim app1.yaml
+ 1369  docker ps
+ 1370  curl -Lo values-production.yaml https://raw.githubusercontent.com/helm/charts/master/stable/redis/values-production.yaml
+ 1371  vim values-production.yaml 
+ 1372  kubectl cluster-info 
+ 1373  helm install redis stable/redis --values values-production.yaml
+ 1374  helm install --name redis stable/redis --values values-production.yaml
+ 1375  vim values-production.yaml 
+ 1376  kubectl get pods
+ 1377  kubectl describe redis-master-0
+ 1378  kubectl describe pod redis-master-0
+ 1379  vim values-production.yaml 
+ 1380  mkdir /data
+ 1381  ls /data/
+ 1382  kubectl get pods
+ 1383  kubectl stop pod redis-master-0
+ 1384  kubectl get pod redis-master-0
+ 1385  kubectl restart pod redis-master-0
+ 1386  kubectl stop pod redis-master-0
+ 1387  kubectl
+ 1388  kubectl get pod redis-master-0
+ 1389  kubectl describe pod redis-master-0
+ 1390  helm reinstall --name redis stable/redis --values values-production.yaml
+ 1391  helm remove --name redis stable/redis --values values-production.yaml
+ 1392  helm delete --name redis stable/redis --values values-production.yaml
+ 1393  helm delete redis stable/redis --values values-production.yaml
+ 1394  helm delete redis stable/redis
+ 1395  helm
+ 1396  helm get
+ 1397  helm list
+ 1398  kubectl get pod redis-master-0
+ 1399  kubectl get pods
+ 1400  helm install --name redis stable/redis --values values-production.yaml
+ 1401  helm install --name redis2 stable/redis --values values-production.yaml
+ 1402  kubectl get pods
+ 1403  kubectl describe redis2-master-0
+ 1404  kubectl describe pod redis2-master-0
+ 1405  kubectl status
+ 1406  kubectl nodes
+ 1407  kubect
+ 1408  kubectl 
+ 1409  kubectl get nodes
+ 1410  ls
+ 1411  ls /
+ 1412  cd depl
+ 1413  cd /deployments/
+ 1414  ls
+ 1415  cd ..
+ 1416  ls
+ 1417  cd /root/
+ 1418  ls
+ 1419  cd ingress/
+ 1420  ls
+ 1421  cat app1.yaml 
+ 1422  vim app1.yaml 
+ 1423  cp app1.yaml app2.yaml 
+ 1424  vim app2.yaml 
+ 1425  ls -ll
+ 1426  kubectl create -f app1.yaml 
+ 1427  cat app1.yaml 
+ 1428  cat ../meu_primeiro_deployment.yml 
+ 1429  vim app1.yaml 
+ 1430  kubectl create -f app1.yaml 
+ 1431  vim app1.yaml 
+ 1432  kubectl run app1 --image=dockersamples/static-site --port=80
+ 1433  kubectl get pods
+ 1434  kubectl 
+ 1435  history
+ 1436  kubectl get deployments.apps 
+ 1437  kubectl get deployments.apps  app1 
+ 1438  kubectl get deployments.apps  app1 -o yaml > app1-.yaml
+ 1439  vim app1-.yaml 
+ 1440  cat app1.yaml 
+ 1441  cat app1-.yaml 
+ 1442  vim app1-.yaml 
+ 1443  ls
+ 1444  mv app1-.yaml app1.yaml 
+ 1445  kubectl get pods
+ 1446  kubectl delete deployments.apps app1
+ 1447  ls
+ 1448  cat app1.yaml 
+ 1449  cp app1.yaml app2.yaml 
+ 1450  vim app2.yaml
+ 1451  kubectl create -f app1.yaml 
+ 1452  vim app1.yaml 
+ 1453  kubectl create -f app1.yaml 
+ 1454  vim app2.yaml 
+ 1455  kubectl create -f app2.yaml 
+ 1456  kubectl get deployments.apps 
+ 1457  kubectl scale deployment app1 -h
+ 1458  kubectl scale deployment app1 --replicas=2
+ 1459  kubectl scale deployment app2 --replicas=2
+ 1460  vim svc-app1.yaml
+ 1461  kubectl get svc
+ 1462  cp svc-app1.yaml svc-app2.yaml 
+ 1463  vim svc-app2.yaml 
+ 1464  ls
+ 1465  kubectl create -f svc-app1.yaml 
+ 1466  kubectl create -f svc-app2.yaml 
+ 1467  kubectl get svc
+ 1468  kubectl get svc,deploy.po
+ 1469  kubectl get svc,deploy,po
+ 1470  kubectl get endpoints 
+ 1471  kubectl get endpoints appsvc1
+ 1472  kubectl inspect endpoints appsvc1
+ 1473  kubectl 
+ 1474  history | grep inspect
+ 1475  history
+ 1476  kubectl describe endpoints appsvc1
+ 1477  kubectl get svc
+ 1478  kubectl get endpoints 
+ 1479  curl 10.111.176.116
+ 1480  curl 10.100.108.43
+ 1481  kubectl get endpoints 
+ 1482  vim svc-app1.yaml 
+ 1483  kubectl get endpoints 
+ 1484  vim default-backend.yaml
+ 1485  ls
+ 1486  cd ingress/
+ 1487  ls -ll
+ 1488  ls
+ 1489  vim ingress/
+ 1490  cd ingress/
+ 1491  ls
+ 1492  kubectl run default-backend --image=gcr.io/google_containers/defaultbackend:1.0 --port=8080
+ 1493  kubectl get deploy
+ 1494  kubectl get deploy -o yaml
+ 1495  kubectl get deploy
+ 1496  kubectl get deploy > default-backend.yaml
+ 1497  vim default-backend.yaml 
+ 1498  kubectl get deploy -o yaml > default-backend.yaml
+ 1499  vim default-backend.yaml 
+ 1500  kubectl get deploy default-backend -o yaml > default-backend.yaml
+ 1501  vim default-backend.yaml 
+ 1502  kubectl get deploy
+ 1503  kubectl delete deployments.apps default-backend
+ 1504  ls
+ 1505  kubectl create -f default-backend.yaml 
+ 1506  kubectl get deployments.apps 
+ 1507  history
+ 1508  kubectl get endpoints 
+ 1509  kubectl get deployments.apps 
+ 1510  kubectl delete deployments.apps  default-backend
+ 1511  kubectl create namespace ingress
+ 1512  kubectl create -f default-backend.yaml -n ingress
+ 1513  kubectl get pods -n ingress
+ 1514  vim default-backend-svc.yaml
+ 1515  kubectl delete deployments.apps default-backend -n ingress
+ 1516  vim default-backend.yaml 
+ 1517  kubectl create -f default-backend.yaml -n ingress
+ 1518  vim default-backend.yaml 
+ 1519  kubectl create -f default-backend.yaml -n ingress
+ 1520  kubectl create -f default-backend-svc.yaml.yaml -n ingress
+ 1521  kubectl create -f default-backend-svc.yaml -n ingress
+ 1522  kubectl get svc -n igress
+ 1523  kubectl get svc -n ingress
+ 1524  kubectl get deployments.apps 
+ 1525  kubectl get ep
+ 1526  kubectl get ep -n ingress
+ 1527  curl http://10.40.0.13:8080
+ 1528  curl http://10.40.0.13:8080/healthz
+ 1529  curl http://10.40.0.13:8080/healthzs
+ 1530  curl http://10.40.0.13:8080/healthz
+ 1531  curl --head http://10.40.0.13:8080/healthz
+ 1532  curl --head -vvv http://10.40.0.13:8080/healthz
+ 1533  vim nginx-ingress-controller-config-map.yaml
+ 1534  kubectl create -f nginx-ingress-controller-config-map.yaml 
+ 1535  kubectl delete -f nginx-ingress-controller-config-map.yaml 
+ 1536  kubectl create -f nginx-ingress-controller-config-map.yaml -n ingress
+ 1537  kubectl get configmaps -n ingress
+ 1538  kubectl describe configmaps -n ingress
+ 1539  cd ingress/
+ 1540  vim nginx-ingress-controller-service-account.yaml
+ 1541  vim nginx-ingress-controller-clusterrole.yaml
+ 1542  vim nginx-ingress-controller-clusterroleBinding.yaml
+ 1543  kubectl create -f nginx-ingress-controller-clusterrole.yaml -n ingress
+ 1544  kubectl create -f nginx-ingress-controller-service-account.yaml -n ingress
+ 1545  kubectl create -f nginx-ingress-controller-clusterroleBinding.yaml -n ingress
+ 1546  vim nginx-ingress-controller-clusterroleBinding.yaml
+ 1547  cd ingress/
+ 1548  ls
+ 1549  kubectl create -f nginx-ingress-controller-clusterroleBinding.yaml -n ingress
+ 1550  vim nginx-ingress-controller-clusterroleBinding.yaml
+ 1551  kubectl create -f nginx-ingress-controller-clusterroleBinding.yaml -n ingress
+ 1552  kubectl get serviceaccounts -n ingress
+ 1553  kubectl get clusterrole -n ingress
+ 1554  kubectl get clusterrolebindings.rbac.authorization.k8s.io -n ingress
+ 1555  vim nginx-ingress-controller-deployment.yaml
+ 1556  kubectl create -f nginx-ingress-controller-deployment.yaml -n ingress
+ 1557  vim nginx-ingress-controller-deployment.yaml
+ 1558  ls
+ 1559  vim ../meu_primeiro_deployment.yml 
+ 1560  vim nginx-ingress-controller-deployment.yaml
+ 1561  kubectl create -f nginx-ingress-controller-deployment.yaml -n ingress
+ 1562  kubectl create -f nginx-ingress-controller-deployment.yaml -n ingress --validate=false
+ 1563  vim nginx-ingress-controller-deployment.yaml
+ 1564  kubectl create -f nginx-ingress-controller-deployment.yaml -n ingress
+ 1565  ls
+ 1566  vim app1.yaml 
+ 1567  vim nginx-ingress-controller-deployment.yaml
+ 1568  vim app1.yaml 
+ 1569  vim nginx-ingress-controller-deployment.yaml
+ 1570  vim app1.yaml 
+ 1571  vim nginx-ingress-controller-deployment.yaml
+ 1572  kubectl create -f nginx-ingress-controller-deployment.yaml -n ingress
+ 1573  vim app1.yaml 
+ 1574  vim nginx-ingress-controller-deployment.yaml
+ 1575  kubectl create -f nginx-ingress-controller-deployment.yaml -n ingress
+ 1576  vim nginx-ingress-controller-deployment.yaml
+ 1577  kubectl create -f nginx-ingress-controller-deployment.yaml -n ingress
+ 1578  vim nginx-ingress-controller-deployment.yaml
+ 1579  kubectl create -f nginx-ingress-controller-deployment.yaml -n ingress
+ 1580  vim nginx-ingress-controller-deployment.yaml
+ 1581  kubectl create -f nginx-ingress-controller-deployment.yaml -n ingress
+ 1582  kubectl get deployments.apps -n ingress
+ 1583  vim nginx-ingress.yaml
+ 1584  ifconfig eth0
+ 1585  vim nginx-ingress.yaml
+ 1586  vim app-ingress.yaml
+ 1587  kubectl get svc
+ 1588  kubectl get svc -n ingress
+ 1589  kubectl create -f nginx-ingress.yaml 
+ 1590  ls
+ 1591  grep -R Volume
+ 1592  ls
+ 1593  cd volume/
+ 1594  ls
+ 1595  vim nfs-deploy.yaml 
+ 1596  grep -nir volumeMounts
+ 1597  cd ..
+ 1598  grep -nir volumeMounts
+ 1599  vim meu_primeiro_pod_initContainer.yaml
+ 1600  cd volume/
+ 1601  ls
+ 1602  cat meu_primeiro_pv.yaml
+ 1603  kubectl get pv
+ 1604  cat meu_primeiro_pvc.yaml
+ 1605  cd ..
+ 1606  ls -ll
+ 1607  cd ingress/
+ 1608  ls
+ 1609  ls -ll
+ 1610  kubectl create -f nginx-ingress.yaml -n ingress
+ 1611  ifconfig
+ 1612  ifconfig eth0
+ 1613  cd ..
+ 1614  ls -ll
+ 1615  cd volume/
+ 1616  ls
+ 1617  vim nfs-deploy.yaml 
+ 1618  cat meu_primeiro_pv.yaml
+ 1619  vim /etc/exports 
+ 1620  mkdir /opt/dados2
+ 1621  exportfs -ar
+ 1622  cp meu_segundo_pv.yaml
+ 1623  cp meu_primeiro_pv.yaml meu_segundo_pv.yaml
+ 1624  vim meu_segundo_pv.yaml 
+ 1625  cp meu_primeiro_pvc.yaml meu_segundo_pvc.yaml
+ 1626  vim meu_segundo_pvc.yaml 
+ 1627  ls -ll
+ 1628  cp nfs-deploy.yaml nfs-deploy2.yaml
+ 1629  vim nfs-deploy2.yaml
+ 1630  kubectl create -f meu_segundo_pv.yaml
+ 1631  kubectl create -f meu_segundo_pvc.yaml
+ 1632  kubectl create -f nfs-deploy2.yaml
+ 1633  kubectl describe deployments.apps -n lupalinda nfs-deploy2 
+ 1634  kubectl exec -it -n lupalinda nfs-deploy2-7b4c6cfbbc-kkr5p bash
+ 1635  ls
+ 1636  ls -ll
+ 1637  cat nfs-deploy2.yaml
+ 1638  cd ingress/
+ 1639  ifconfig eth0
+ 1640  vim nginx-ingress.yaml
+ 1641  ping k8s01.sulinfra.com.br
+ 1642  kubectl create -f nginx-ingress.yaml -n ingress
+ 1643  ls
+ 1644  ls -ll
+ 1645  cat app-ingress.yaml
+ 1646  vim app-ingress.yaml
+ 1647  kubectl create -f app-ingress.yaml 
+ 1648  vim app-ingress.yaml
+ 1649  vim 
+ 1650  vim app-ingress.yaml
+ 1651  kubectl create -f app-ingress.yaml 
+ 1652  vim nginx-ingress.yaml
+ 1653  vim app-ingress.yaml
+ 1654  wget https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/baremetal/deploy.yaml
+ 1655  vim deploy.yaml
+ 1656  kubectl create -f deploy.yaml
+ 1657  vim deploy.yaml
+ 1658  cd ingress/
+ 1659  ls -ll
+ 1660  kubectl create -f deploy.yaml 
+ 1661  vim app-ingress.yaml 
+ 1662  kubectl create -f app-ingress.yaml 
+ 1663  vim app-ingress.yaml 
+ 1664  kubectl create -f app-ingress.yaml 
+ 1665  vim nginx-ingress-controller-clusterrole.yaml
+ 1666  vim nginx-ingress-controller-config-map.yaml
+ 1667  vim nginx-ingress-controller-deployment.yaml
+ 1668  vim "k8s.io/kubernetes/pkg/api/legacyscheme/scheme.go
+ 1669  vim "k8s.io/kubernetes/pkg/api/legacyscheme/scheme.go"
+ 1670  kubectl 
+ 1671  kubectl version
+ 1672  vim app-ingress.yaml 
+ 1673  kubectl create -f app-ingress.yaml 
+ 1674  vim app-ingress.yaml 
+ 1675  kubectl create -f app-ingress.yaml 
+ 1676  vim app-ingress.yaml 
+ 1677  kubectl create -f app-ingress.yaml 
+ 1678  vim app-ingress.yaml 
+ 1679  kubectl create -f app-ingress.yaml 
+ 1680  vim app-ingress.yaml 
+ 1681  kubectl api-resources 
+ 1682  kubectl api-resources ingresses
+ 1683  kubectl get api-resources ingresses
+ 1684  kubectl get api-resources 
+ 1685  kubectl api-resources 
+ 1686  kubectl api-resources -o wide
+ 1687  kubectl api-resources -o yaml
+ 1688  kubectl api-resources -o wide
+ 1689  netstat -nltp
+ 1690  ifconfig eth0
+ 1691  kubectl config view
+ 1692  kubectl proxy --port=8080
+ 1693  kubectl proxy --port=8080 &
+ 1694  curl http://localhost:8080/api
+ 1695  curl http://localhost:8080/api/pods
+ 1696  curl http://localhost:8080/api/./pods
+ 1697  curl http://localhost:8080/api/pods
+ 1698  curl http://localhost:8080/api/
+ 1699  cd ingress/
+ 1700  ls
+ 1701  vim deploy.yaml 
+ 1702  kubectl -f deploy.yaml 
+ 1703  kubectl create -f deploy.yaml -n ingress
+ 1704  ls
+ 1705  kubectl create -f app-ingress.yaml 
+ 1706  kubectl api-resources 
+ 1707  vim app-ingress.yaml 
+ 1708  kubectl create -f app-ingress.yaml 
+ 1709  vim app-ingress.yaml 
+ 1710  kubectl create -f app-ingress.yaml 
+ 1711  kubectl --version
+ 1712  kubectl version
+ 1713  vim app-ingress.yaml 
+ 1714  kubectl create -f app-ingress.yaml 
+ 1715  kubectl get nodes
+ 1716  kubectl describe nodes k8s01
+ 1717  ls
+ 1718  vim app-ingress.yaml
+ 1719  curl http://localhost:8080/api/
+ 1720  kubectl create -f app-ingress.yaml 
+ 1721  kubectl run default-backend --image=gcr.io/google_containers/defaultbackend:1.0 --port=8081
+ 1722  kubectl get 
+ 1723  kubectl get -A
+ 1724  kubectl get pods -A
+ 1725  kubectl get -A
+ 1726  kubectl get nodes
+ 1727  kubectl version
+ 1728  kubectl create -h
+ 1729  kubectl get ingress
+ 1730  kubectl edit ingress
+ 1731  kubectl describe ingress
+ 1732  kubectl get ingress
+ 1733  kubectl get ingress virtual-host
+ 1734  kubectl get ingress virtual-host -o yaml > bicca.yaml
+ 1735  vim bicca.yaml 
+ 1736  kubectl create -f  bicca.yaml 
+ 1737  ls
+ 1738  cat app-ingress.yaml 
+ 1739  vim -d app-ingress.yaml bicca.yaml
+ 1740  vim app-ingress.yaml 
+ 1741  kubectl create -f app-ingress.yaml 
+ 1742  cat app-ingress.yaml
+ 1743  kubectl get ingress
+ 1744  cat app-ingress.yaml
+ 1745  netstat -nltp
+ 1746  ls -ll
+ 1747  kubectl get svc -n ingress
+ 1748  kubectl get -A -n ingress
+ 1749  kubectl get -n ingress
+ 1750  ls -ll
+ 1751  cat nginx-ingress.yaml
+ 1752  vim nginx-ingress-controller-clusterrole.yaml
+ 1753  kubectl get pods -A
+ 1754  kubectl get svc -n ingress-nginx
+ 1755  kubectl get svc -n ingress
+ 1756  ls
+ 1757  vim deploy.yaml
+ 1758  vim app1.yaml 
+ 1759  vim app-ingress.yaml 
+ 1760  vim nginx-ingress.yaml 
+ 1761  kubectl get svc -n ingress
+ 1762  kubectl delete svc -n ingress
+ 1763  kubectl delete svc default-backend -n ingress
+ 1764  kubectl delete svc -n ingress-nginx 
+ 1765  kubectl get svc -n ingress-nginx 
+ 1766  curl localhost:32041/app1
+ 1767  curl http://localhost:32041/app1
+ 1768  kubectl get pods -n ingress-nginx -o wide
+ 1769  curl 10.40.0.16:32041/app1
+ 1770  curl 10.40.0.16:31790/app1
+ 1771  kubectl get nodes -o wide
+ 1772  curl 187.84.234.102:31642
+ 1773  curl 187.84.234.102:31642/app1
+ 1774  curl 187.84.234.102:31642/app2
+ 1775  ls
+ 1776  vim app-ingress.yaml
+ 1777  vim hosts
+ 1778  vim /etc/hosts
+ 1779  curl 187.84.234.102:31642/app2
+ 1780  curl k8s01.sulinfra.com.br:31642/app2
+ 1781  curl k8s01.sulinfra.com.br:31642/app1
+ 1782  ls 
+ 1783  kubectl get ingress
+ 1784  kubectl get svc
+ 1785  ls
+ 1786  vim app-ingress.yaml
+ 1787  kubectl get svc -n ingress-nginx
+ 1788  kubectl get svc 
+ 1789  kubectl get svc appsvc1
+ 1790  kubectl get describe appsvc1
+ 1791  kubectl describe appsvc1
+ 1792  kubectl describe svc appsvc1
+ 1793  kubectl get pods
+ 1794  kubectl get deployments.apps 
+ 1795  ls
+ 1796  ls -ll
+ 1797  kubectl create -f app1.yaml
+ 1798  kubectl create -f svc-app1.yaml
+ 1799  cat app1.yaml
+ 1800  cat svc-app1.yaml
+ 1801  ls
+ 1802  cat app-ingress.yaml
+ 1803  kubectl get ing
+ 1804  kubectl get app-ingress -o yaml
+ 1805  kubectl get ing app-ingress -o yaml
+ 1806  kubectl get svc appsvc1
+ 1807  kubectl get svc appsvc1 -o yaml
+ 1808  kubectl get deployments.apps app1
+ 1809  kubectl get pods
+ 1810  kubectl describe app1-b759bfd75-gz2fl -o yaml
+ 1811  kubectl describe pod app1-b759bfd75-gz2fl -o yaml
+ 1812  kubectl describe pods app1-b759bfd75-gz2fl -o yaml
+ 1813  kubectl get ing app-ingress -o yaml
+ 1814  kubectl edit ing app-ingress
+ 1815  curl k8s01.sulinfra.com.br:31642
+ 1816  kubectl get pods
+ 1817  kubectl logs app1-b759bfd75-gz2fl
+ 1818  kubectl logs app1-*
+ 1819  kubectl logs app1-b759bfd75-jgc2n
+ 1820  packit
+ 1821  df -ih
+ 1822  ls -ll
+ 1823  stat meu_pod_liveness.yaml
+ 1824  vim 1709900
+ 1825  man 7 inotify
+ 1826  apt-get install iwatch
+ 1827  man 7 inotify
+ 1828  kubectl get ingress
+ 1829  kubectl get ingress -n ingress
+ 1830  kubectl describe ingresses. app-ingress 
+ 1831  kubectl describe ingresses. app-ingress -n ingress
+ 1832  kubectl describe ingresses. app-ingress 
+ 1833  ls
+ 1834  cd ingress/
+ 1835  ls
+ 1836  vim app-ingress.yaml 
+ 1837  kubectl get ingress -n ingress
+ 1838  vim nginx-ingress
+ 1839  vim nginx-ingress.yaml 
+ 1840  kubectl apply -f app-ingress.yaml 
+ 1841  kubectl get ingress -n ingress
+ 1842  kubectl get ingress 
+ 1843  kubectl describe ingresses. app-ingress 
+ 1844  vim app-ingress.yaml 
+ 1845  kubectl get svc
+ 1846  kubectl describe ingresses. app-ingress 
+ 1847  kubectl describe svc appsvc1
+ 1848  vim app-ingress.yaml 
+ 1849  kubectl describe svc appsvc1
+ 1850  vim app1.yaml 
+ 1851  vim app1v2.yaml
+ 1852  kubectl create -f app1v2.yaml
+ 1853  vim app1v2.yaml
+ 1854  kubectl create -f app1v2.yaml
+ 1855  rm -rf  app1v2.yaml
+ 1856  vim svc-app1.yaml 
+ 1857  vim default-backend-svc.yaml 
+ 1858  vim svc-app1.yaml 
+ 1859  ls -ll
+ 1860  vim app-ingress.yaml 
+ 1861  kubectl get pods -n ingress-nginx   -l app.kubernetes.io/name=ingress-nginx --watch
+ 1862  POD_NAME=$(kubectl get pods -l app.kubernetes.io/name=ingress-nginx -o jsonpath='{.items[0].metadata.name}')
+ 1863  kubectl exec -it $POD_NAME -- /nginx-ingress-controller --version
+ 1864  inotifywait 
+ 1865  man 7 inotify
+ 1866  ls
+ 1867  vim meu_primeiro_service.yaml
+ 1868  vim meu_primeiro_pod_limitado.yml 
+ 1869  vim meu_primeiro_service.yaml
+ 1870  history | grep create
+ 1871  history | grep run
+ 1872  vim meu_primeiro_service.yaml
+ 1873  ls -ll
+ 1874  cd cores-frutas/
+ 1875  ls
+ 1876  cd ..
+ 1877  ls 
+ 1878  ls -ll
+ 1879  vim pod-emptydir.yaml
+ 1880  ls
+ 1881  ls -ll
+ 1882  grep -R secret
+ 1883  vim meu_primeiro_pod_secret_env.yml
+ 1884  history | grep secret
+ 1885  echo -n 'root" | base64
+ 1886  echo -n 'root' | base64
+ 1887  echo -n '123qwe!' | base64
+ 1888  ls
+ 1889  vim meu_primeiro_pod_secret_env.yml
+ 1890  echo -n 'mysql-svc' | base64
+ 1891  echo -n 'contosodb' | base64
+ 1892  kubectl get nodes
+ 1893  ifconfig
+ 1894  service kubelet restart
+ 1895  kubeadm 
+ 1896  kubectl get nodes
+ 1897  kubectl get daemonset
+ 1898  kubectl get daemonset -A
+ 1899  kubectl get routes
+ 1900  kubectl get routes -A
+ 1901  kubectl get deploy
+ 1902  kubectl get ns
+ 1903  ls
+ 1904  git clone git@github.com:luistkd4/kubernetes-labs.git
+ 1905  passwd
+ 1906  history > k8s-history.txt
